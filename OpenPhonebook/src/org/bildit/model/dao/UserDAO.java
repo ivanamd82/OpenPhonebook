@@ -19,8 +19,7 @@ public class UserDAO implements IUserDAO {
 		String query = "SELECT * FROM imenik.user WHERE user.name = ?";
 		
 		ResultSet rs = null;
-		System.out.println("AAAA: ");
-		System.out.println("AAAA: "+connection.toString());
+		
 		try (PreparedStatement ps = connection.prepareStatement(query)) {
 			
 			ps.setString(1, name);

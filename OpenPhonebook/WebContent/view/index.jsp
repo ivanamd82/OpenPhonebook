@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Test</title>
+<title>Insert title here</title>
 </head>
 <body>
-<a href="./ServletAdd"><button>Go to</button></a>
+
 </body>
 </html>

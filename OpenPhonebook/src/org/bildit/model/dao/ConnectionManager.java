@@ -26,6 +26,7 @@ public class ConnectionManager {
 	}
 	
 	public Connection getConnection() {
+		
 		if (connection == null) {
 			if(openConnection()) {
 				return connection;
@@ -40,9 +41,7 @@ public class ConnectionManager {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("nesto");
 			connection = DriverManager.getConnection(CONN_STRING, USER_NAME, PASSWORD);
-			System.out.println("nesto2");
 			return true;
 		} catch (SQLException e) {
 			System.err.println(e);
