@@ -1,5 +1,5 @@
 
-package org.bildit.model;
+package org.bildit.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;

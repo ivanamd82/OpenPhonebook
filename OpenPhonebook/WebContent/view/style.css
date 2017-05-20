@@ -1,0 +1,39 @@
+body {
+    font-family:Georgia;
+	color: #FFF;
+
+}
+.jumbotron {
+  background-image:url("img/1.jpg");
+  margin: 0px;
+  height: 630px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg {
+	background-image: url("img/63206145-telephone-wallpapers1.jpg");
+	height: 630px;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-form {
+    margin: 5%;
+}
+.form-control{
+    border-radius: 0px;
+    height: 45px;
+    font-size: 16px;
+}
+.containerLog {
+	width: 400px;
+	padding-top: 60px;
+	padding-bottom: 40px;
+	margin-left: 100px;
+}
+#loglink  a {
+	color: #FFFFFF;
+	font-size: 18px;
+}
+#loglink  a:hover {
+	font-weight: bold;
+}

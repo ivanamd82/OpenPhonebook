@@ -1,3 +1,4 @@
+SET GLOBAL time_zone = '+1:00';
 DROP DATABASE IF EXISTS `imenik`;
 CREATE DATABASE IF NOT EXISTS `imenik` DEFAULT CHARACTER SET latin1;
 USE `imenik`;

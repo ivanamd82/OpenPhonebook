@@ -13,21 +13,26 @@ public class UserBO implements IUserBO {
 	
 	//login
 	@Override
-	public User getUserBO(String name, String password) throws SQLException {
+	public User getUserBO(String name, String password) {
 		
-		if (name == "" || password == "") {
-			return null;
-		}
-		else {
-			user = userDAO.getUser(name);
-		
-			if(!user.getPassword().equals(password)) {
+		try {
+			if (name == "" || password == "") {
 				return null;
 			}
-			else {		
-				return user;
+			else {
+				user = userDAO.getUser(name);
+		
+				if(!user.getPassword().equals(password)) {
+					return null;
+				}
+				else {		
+					return user;
+				}
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+		return null;
 	}
 	//registracija
 	@Override
