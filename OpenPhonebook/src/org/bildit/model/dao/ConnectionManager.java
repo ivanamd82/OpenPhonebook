@@ -10,7 +10,7 @@ public class ConnectionManager {
 	
 	private static final String USER_NAME = "root";
 	private static final String PASSWORD = "pass";
-	private static final String CONN_STRING = "jdbc:mysql://localhost/imenik";
+	private static final String CONN_STRING = "jdbc:mysql://localhost/imenik?serverTimezone=UTC";
 	
 	private Connection connection = null;
 	

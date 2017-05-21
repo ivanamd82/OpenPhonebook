@@ -18,13 +18,10 @@ public class Login extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
-	String name, password;
-		
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		name = request.getParameter("userName");
-		password = request.getParameter("password");
+		String name = request.getParameter("userName");
+		String password = request.getParameter("password");
 		
 		if ( name != null && password != null) {
 			UserBO userBO = new UserBO();
@@ -34,13 +31,17 @@ public class Login extends HttpServlet {
 				session.setAttribute("sessionName", user.getName());
 				
 				RequestDispatcher view = request.getRequestDispatcher("view/userhome.jsp");
+				view.forward(request, response);				
+			}
+			else {
+				RequestDispatcher view = request.getRequestDispatcher("view/login.jsp");
 				view.forward(request, response);
-				
 			}
 		}
-		
-		RequestDispatcher view = request.getRequestDispatcher("view/login.jsp");
-		view.forward(request, response);
+		else {
+			RequestDispatcher view = request.getRequestDispatcher("view/login.jsp");
+			view.forward(request, response);
+		}
 		
 	}
 

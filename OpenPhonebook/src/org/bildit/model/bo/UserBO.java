@@ -31,6 +31,8 @@ public class UserBO implements IUserBO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NullPointerException e) {
+			e.printStackTrace();
 		}
 		return null;
 	}
