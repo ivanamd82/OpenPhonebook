@@ -38,20 +38,25 @@ public class UserBO implements IUserBO {
 	}
 	//registracija
 	@Override
-	public boolean addUserBO(String name, String password) throws SQLException {
+	public boolean addUserBO(String name, String password)  {
 		
-		if (name == "" || password == "") {
-			return false;
-		}
-		else {
-			User user = userDAO.getUser(name);
-			if (user != null) {
+		try {
+			if (name == "" || password == "") {
 				return false;
 			}
 			else {
-				return userDAO.addUser(name, password);
+				User user = userDAO.getUser(name);
+				if (user != null) {
+					return false;
+				}
+				else {
+					return userDAO.addUser(name, password);
+				}
 			}
-		}		
+		} catch (SQLException e){
+			e.printStackTrace();	
+		}
+		return false;
 	}
 
 	//promjena lozinke

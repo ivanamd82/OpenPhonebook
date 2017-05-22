@@ -18,7 +18,6 @@
                             <input type="text" id="inputName" name="userName" class="form-control" placeholder="Username" required autofocus>
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-                            <p id="loglink"><a href="userhome.html">Login</a></p>
                             <input class="button" type="submit" name="login" value="Login" />
                         </form>
                     </div>
