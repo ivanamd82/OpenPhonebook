@@ -11,7 +11,7 @@ public interface IContactDAO {
 	
 	public Contact getContact(int contactID) throws SQLException;
 	
-	public boolean addContact(String name, String lastName, String phone, String email, String city, String userName) throws SQLException;
+	public boolean addContact(Contact contact) throws SQLException;
 	
 	public boolean updateContact(String name, String lastName, String phone, String email, String city, int contactID) throws SQLException;
 	

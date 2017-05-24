@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/addcontact")
 public class AddContact extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -18,7 +19,9 @@ public class AddContact extends HttpServlet {
 		String emailContact = request.getParameter("emailContact");
 		String phoneContact = request.getParameter("phoneContact");
 		String cityContact = request.getParameter("cityContact");
-	}
+			
+		
+}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
