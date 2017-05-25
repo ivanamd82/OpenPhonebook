@@ -78,6 +78,32 @@ public class ContactDAO implements IContactDAO {
 	
 
 	@Override
+	public ArrayList<Contact> searchContacts (String userName, String search) throws SQLException {
+		ArrayList<Contact> contacts = new ArrayList<>();
+		
+		String query = "SELECT * FROM imenik.contact WHERE contact.userName = ? AND contact.name LIKE ? "
+				+ "OR contact.userName = ? AND contact.lastName LIKE ?" ;
+		
+		ResultSet rs = null;
+		
+		try (PreparedStatement ps = connection.prepareStatement(query)){
+			
+			ps.setString(1, userName);
+			ps.setString(2, "%"+search+"%");
+			ps.setString(3, userName);
+			ps.setString(4, "%"+search+"%");
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				contacts.add(new Contact(rs.getInt("contactID"),rs.getString("name"),rs.getString("lastName"),rs.getString("phone"),rs.getString("email"),rs.getString("city"),rs.getString("userName")));
+			}
+			rs.close();
+		} 
+		return contacts;
+	}
+	
+	@Override
 	public boolean updateContact(String name, String lastName, String phone, String email, String city, int contactID) throws SQLException {
 		
 		String query = "UPDATE imenik.contact SET name = ? lastName = ?, phone = ? email = ? city = ? WHERE conctactID = ?";

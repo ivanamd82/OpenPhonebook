@@ -67,7 +67,23 @@ public class ContactBO implements IContactBO {
 		return false;
 	}
 	
-
+	@Override
+	public ArrayList<Contact> searchContactsBO (String userName, String search) throws SQLException {
+		
+		if (userName == "") {
+			return null;
+		}
+		else {
+			if(search == "") {
+				return null;
+			}
+			else {
+				contacts = contactDAO.searchContacts(userName, search);
+				return contacts;
+			}
+		}
+	}
+	
 	@Override
 	public boolean updateContactBO(String name, String lastName, String phone, String email, String city, int contactID) throws SQLException {
 		
