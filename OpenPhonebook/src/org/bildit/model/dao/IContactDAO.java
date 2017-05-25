@@ -13,6 +13,8 @@ public interface IContactDAO {
 	
 	public boolean addContact(String name, String lastName, String phone, String email, String city, String userName) throws SQLException;
 	
+	public ArrayList<Contact> searchContacts (String userName, String search) throws SQLException;
+	
 	public boolean updateContact(String name, String lastName, String phone, String email, String city, int contactID) throws SQLException;
 	
 	public boolean deleteContact(int contactID) throws SQLException;
