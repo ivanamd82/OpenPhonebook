@@ -20,7 +20,7 @@ public class ContactDAO implements IContactDAO {
 		ArrayList<Contact> contacts = new ArrayList<>();
 		
 		String query = "SELECT * FROM imenik.contact WHERE contact.userName = ?";
-		
+				
 		ResultSet rs = null;
 		
 		try (PreparedStatement ps = connection.prepareStatement(query)){
@@ -56,52 +56,27 @@ public class ContactDAO implements IContactDAO {
 		}
 		return contact;
 	}
-
+	
 	@Override
-	public boolean addContact(String name, String lastName, String phone, String email, String city, String userName) throws SQLException {
+	public boolean addContact(Contact contact) throws SQLException {
 		
 		String query = "INSERT INTO imenik.contact (name,lastName,phone,email,city,userName) VALUES (?, ?, ?, ?, ?, ?)";
 		
 		try (PreparedStatement ps = connection.prepareStatement(query)) {
-			ps.setString(1, name);
-			ps.setString(2, lastName);
-			ps.setString(3, phone);
-			ps.setString(4, email);
-			ps.setString(5, city);
-			ps.setString(6, userName);
+			ps.setString(1, contact.getName());
+			ps.setString(2, contact.getLastName());
+			ps.setString(3, contact.getPhone());
+			ps.setString(4, contact.getEmail());
+			ps.setString(5, contact.getCity());
+			ps.setString(6, contact.getUserName());
 			
 			ps.executeUpdate();
 			
 			return true;
-		}
+		}		
 	}
 	
-	@Override
-	public ArrayList<Contact> searchContacts (String userName, String search) throws SQLException {
-		ArrayList<Contact> contacts = new ArrayList<>();
-		
-		String query = "SELECT * FROM imenik.contact WHERE contact.userName = ? AND contact.name LIKE ? "
-				+ "OR contact.userName = ? AND contact.lastName LIKE ?" ;
-		
-		ResultSet rs = null;
-		
-		try (PreparedStatement ps = connection.prepareStatement(query)){
-			
-			ps.setString(1, userName);
-			ps.setString(2, "%"+search+"%");
-			ps.setString(3, userName);
-			ps.setString(4, "%"+search+"%");
-			
-			rs = ps.executeQuery();
-			
-			while(rs.next()) {
-				contacts.add(new Contact(rs.getInt("contactID"),rs.getString("name"),rs.getString("lastName"),rs.getString("phone"),rs.getString("email"),rs.getString("city"),rs.getString("userName")));
-			}
-			rs.close();
-		} 
-		return contacts;
-	}
-	
+
 	@Override
 	public boolean updateContact(String name, String lastName, String phone, String email, String city, int contactID) throws SQLException {
 		

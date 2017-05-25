@@ -25,7 +25,6 @@ public class Register extends HttpServlet {
 			boolean addConfirm = userBO.addUserBO(name, password);
 			
 			if(addConfirm) {
-				System.out.println("true");
 				User user = new User(name, password);
 				request.setAttribute("user", user);
 				

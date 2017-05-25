@@ -13,61 +13,60 @@ public class ContactBO implements IContactBO {
 	ArrayList<Contact> contacts = new ArrayList<>();
 
 	@Override
-	public ArrayList<Contact> getContactsBO(String userName) throws SQLException {
+	public ArrayList<Contact> getContactsBO(String userName) {
 		
-		if (userName == "") {
-			return null;
-		}
-		else {
-			contacts = contactDAO.getContacts(userName);
-			return contacts;
-		}
-	}
-
-	@Override
-	public Contact getContactBO(int contactID) throws SQLException {
-		if (contactID == 0) {
-			return null;
-		}
-		else {
-			contact = contactDAO.getContact(contactID);
-			return contact;
-		}
-	}
-
-	@Override
-	public boolean addContactBO(String name, String lastName, String phone, String email, String city, String userName) throws SQLException {
-		
-		if (userName == "") {
-			return false;
-		}
-		else {
-			if (name == "" || phone == "") {
-				return false;
-			}
-			else {
-				return contactDAO.addContact(name, lastName, phone, email, city, userName);
-			}
-		}
-		
-	}
-	
-	@Override
-	public ArrayList<Contact> searchContacts (String userName, String search) throws SQLException {
-		
-		if (userName == "") {
-			return null;
-		}
-		else {
-			if(search == "") {
+		try {
+			if (userName == "") {
 				return null;
 			}
 			else {
-				contacts = contactDAO.searchContacts(userName, search);
+				contacts = contactDAO.getContacts(userName);
 				return contacts;
 			}
+		}catch (SQLException e) {
+			e.printStackTrace();
 		}
+		return null;
 	}
+
+	@Override
+	public Contact getContactBO(int contactID) {
+		try {
+			if (contactID == 0) {
+				return null;
+			}
+			else {
+				contact = contactDAO.getContact(contactID);
+				return contact;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@Override
+	public boolean addContactBO(Contact contact) {
+		try {
+			if (contact == null) {
+				return false;
+			}
+			else {
+				if (contact.getName() == "" || contact.getPhone() == "" || contact.getUserName() == "") {
+					return false;
+				}
+				else {
+					return contactDAO.addContact(contact);
+				}
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 
 	@Override
 	public boolean updateContactBO(String name, String lastName, String phone, String email, String city, int contactID) throws SQLException {

@@ -10,16 +10,22 @@ public class Contact {
 	private String city;
 	private String userName;
 	
-	public Contact(int contactID, String name, String lastName, String phone, String email, String city, String userName ){
+	public Contact(String name, String phone, String userName) {
+		this.name = name;
+		this.phone = phone;
+		this.userName = userName;
+	}
+	
+	public Contact(int contactID, String name, String lastName, String phone, String email, String city, String userName) {
 		this.contactID = contactID;
 		this.name = name;
-		this.lastName = lastName;
 		this.phone = phone;
-		this.email = email;
-		this.city = city;
-		this.userName = userName;		
+		this.userName = userName;
 	}
-
+	
+	public void setContactID(int contactID) {
+		this.contactID = contactID;
+	}
 	public int getContactID() {
 		return contactID;
 	}
