@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.bildit.model.dto.User;
 import org.bildit.model.bo.UserBO;
 
 @WebServlet("/register")
@@ -25,22 +24,21 @@ public class Register extends HttpServlet {
 			boolean addConfirm = userBO.addUserBO(name, password);
 			
 			if(addConfirm) {
-				User user = new User(name, password);
-				request.setAttribute("user", user);
 				
 				RequestDispatcher success = request.getRequestDispatcher("view/login.jsp");
 				success.forward(request, response);
 			
 			}
 			else {
-				RequestDispatcher view = request.getRequestDispatcher("view/register.jsp");
+				request.setAttribute("message", "NE");
+				RequestDispatcher view = request.getRequestDispatcher("view/message.jsp");
 				view.forward(request, response);
 			}
 		}
 		else {
 			RequestDispatcher view = request.getRequestDispatcher("view/register.jsp");
 			view.forward(request, response);
-		}
+		}		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

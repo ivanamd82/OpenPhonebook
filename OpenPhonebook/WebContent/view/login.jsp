@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-xs-8 col-sm-7 col-md-4 login-form">
                     	<form class="formLogin" action="login" method="post">
-                            <h2>Please login</h2>
+                            <h2 class="wcolor">Please login</h2>
                             <label for="inputName" class="sr-only">Username</label>
                             <input type="text" id="inputName" name="userName" class="form-control" placeholder="Username" required autofocus>
                             <label for="inputPassword" class="sr-only">Password</label>

@@ -9,7 +9,7 @@
 		<%@ include file="nav.jsp"%>
 	
 		<div id="content">
-        	<div class="container">
+        	<div class="container wcolor">
             	<div class="jumbotron">
 		      		<h1 class="headline">Web Phone Book</h1>
 		      		<p>Simple Phone Book</p>

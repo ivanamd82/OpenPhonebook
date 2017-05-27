@@ -12,7 +12,7 @@
 			<article class="container bgimg">
 				<div class="row">
             		<div class="col-xs-8 col-sm-7 col-md-4 login-form">
-            		 	<h2>Search contact</h2>
+            		 	<h2 class="wcolor">Search contact</h2>
             		 	<form class="formLogin" action="userhome" method="post">
             		 		<label class="sr-only">Search</label>
             		 		<input type="search" id="inputSearch" name="searchContact" class="form-control" placeholder="Search" required autofocus />

@@ -28,10 +28,10 @@ public class AddContact extends HttpServlet {
 		
 		if ( name != null && nameLContact != null) {			
 			HttpSession sesion = request.getSession();
-			String contactName = sesion.getAttribute("sessionName").toString();
+			String userName = sesion.getAttribute("sessionName").toString();
 			ContactBO contactBO = new ContactBO();
 			
-			Contact contact = new Contact(name,phoneContact,contactName);
+			Contact contact = new Contact(name,phoneContact,userName);
 			contact.setLastName(nameLContact);
 			contact.setEmail(emailContact);
 			contact.setCity(cityContact);

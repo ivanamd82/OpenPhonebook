@@ -68,20 +68,24 @@ public class ContactBO implements IContactBO {
 	}
 	
 	@Override
-	public ArrayList<Contact> searchContactsBO (String userName, String search) throws SQLException {
-		
-		if (userName == "") {
-			return null;
-		}
-		else {
-			if(search == "") {
+	public ArrayList<Contact> searchContactsBO (String userName, String search) {
+		try {
+			if (userName == "") {
 				return null;
 			}
 			else {
-				contacts = contactDAO.searchContacts(userName, search);
-				return contacts;
+				if(search == "") {
+					return null;
+				}
+				else {
+					contacts = contactDAO.searchContacts(userName, search);
+					return contacts;
+				}
 			}
+		}catch (SQLException e) {
+			e.printStackTrace();
 		}
+		return null;
 	}
 	
 	@Override

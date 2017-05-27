@@ -13,6 +13,7 @@
 			<article class="container bgimg">
 				<div class="row">
 					<div class="col-xs-8 col-sm-7 col-md-4 login-form">
+						<h2 class="wcolor">Add contact</h2>
                         <form class="formLogin" action="addcontact" method="post">
                         	<label for="inputName" class="sr-only">First name</label>
                             <input type="text" id="inputName" name="nameContact" class="form-control" placeholder="First name" required autofocus>
