@@ -19,7 +19,10 @@ public class Contact {
 	public Contact(int contactID, String name, String lastName, String phone, String email, String city, String userName) {
 		this.contactID = contactID;
 		this.name = name;
+		this.lastName = lastName;
 		this.phone = phone;
+		this.email = email;
+		this.city = city;
 		this.userName = userName;
 	}
 	
