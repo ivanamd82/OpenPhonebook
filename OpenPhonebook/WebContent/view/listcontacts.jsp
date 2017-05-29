@@ -11,16 +11,16 @@
 		<%@ include file="navuser.jsp"%>
 		<div id="content">
 			<article class="container bgimg">
-				<div class="row login-form">
-					<h2>Contacts</h2>
-					<ul class="bgcolor">
+				<div class="login-form">
+					<h2 class="wcolor">Contacts</h2>
+					<ul class="list-group">
 						<c:forEach var="contact" items="${contactList}">
-							<li class="bgcolor">
-								<div class="col-md-2">${contact.getName()}</div>
-								<div class="col-md-2">${contact.getLastName()}</div>
-								<div class="col-md-2">${contact.getPhone()}</div>
-								<div class="col-md-2">${contact.getPhone()}</div>
-								<div class="col-md-2">${contact.getPhone()}</div>
+							<li class="row list-group-item">
+								<p class="col-md-2">${contact.getName()}</p>
+								<p class="col-md-2">${contact.getLastName()}</p>
+								<p class="col-md-2">${contact.getPhone()}</p>
+								<p class="col-md-3">${contact.getEmail()}</p>
+								<p class="col-md-3">${contact.getCity()}</p>
 							</li>
 						</c:forEach>
 					</ul>
