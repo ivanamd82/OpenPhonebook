@@ -30,7 +30,8 @@ public class Register extends HttpServlet {
 			
 			}
 			else {
-				request.setAttribute("message", "NE");
+				request.setAttribute("message", "Korisnicko ime zauzeto!");
+				request.setAttribute("link", "register");
 				RequestDispatcher view = request.getRequestDispatcher("view/message.jsp");
 				view.forward(request, response);
 			}

@@ -25,7 +25,7 @@
                             <input type="text" id="inputPhone" name="phoneContact" class="form-control" placeholder="Phone" required>
                             <label for="inputCity" class="sr-only">City</label>
                             <input type="text" id="inputCity" name="cityContact" class="form-control" placeholder="City" required>
-                            <input class="button" type="submit" name="AddContact" value="Add contact" />
+                            <input type="submit" name="AddContact" value="Add contact" />
                         </form>
                    	</div>
               	</div>

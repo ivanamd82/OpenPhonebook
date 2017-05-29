@@ -18,7 +18,7 @@
                             <input type="text" id="inputName" name="userName" class="form-control" placeholder="Username" required autofocus>
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-                            <input class="button" type="submit" name="login" value="Login" />
+                            <input type="submit" name="login" value="Login" />
                         </form>
                     </div>
              	</div>

@@ -19,7 +19,7 @@
               				<label for="inputPassword" class="sr-only">Password</label>
                   	 		<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
                   	 	
-                      		<input class="button" type="submit" name="signup" value="Sign up" />
+                      		<input type="submit" name="signup" value="Sign up" />
                  		</form>
               		</div>
               	</div>

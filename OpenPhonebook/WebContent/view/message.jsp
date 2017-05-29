@@ -10,8 +10,10 @@
 	<div class="page">
 		<div id="content">
 			<article class="container bgimg">
-				<p id="mess">${message.toString()}</p>
-				<button class="btn">Go back</button>
+				<div class="login-form">
+					<p class="wcolor">${message.toString()}</p>
+					<a href="${link.toString()}" class="loglink"><button>Go back!</button></a>
+				</div>
 			</article>
 		</div>
 	</div>

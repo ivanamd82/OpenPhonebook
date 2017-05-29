@@ -38,11 +38,6 @@ body {
 	margin-left: 100px;
 }
 
-#loglink  a {
-	color: #FFFFFF;
-	font-size: 18px;
-}
-
-#loglink  a:hover {
-	font-weight: bold;
+.loglink {
+	color: #000;
 }
