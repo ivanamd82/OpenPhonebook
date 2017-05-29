@@ -41,7 +41,6 @@ public class AddContact extends HttpServlet {
 			if (addConfirm) {
 				RequestDispatcher view = request.getRequestDispatcher("view/userhome.jsp");
 				view.forward(request, response);
-				System.out.println("Dodan");
 			}			
 		}
 		else {
